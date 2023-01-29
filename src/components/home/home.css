@@ -1,0 +1,77 @@
+.container {
+  height: 100vh;
+  padding: 5rem;
+}
+.bannerdiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+}
+.logodiv{
+  width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+.logoimg {
+  width: 80%;
+  filter: drop-shadow(0 25px 15px rgba(0, 0, 0, 0.3));
+  animation: logoimage 1s infinite ease-in-out alternate;
+}
+@keyframes logoimage {
+  to {
+    transform: translateY(-10px);
+  }
+}
+.brandbox {
+  color: white;
+  background-color: #3b5998;
+}
+.brandsbanner > svg {
+  color: white;
+  font-size: 30px;
+  transition: color 0.5s;
+}
+.brandsbanner > svg:hover {
+  color: #5885b1;
+}
+.container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+.container2 video {
+  width: 60%;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.36);
+}
+@media screen  and (max-width:862px) {
+  .bannerdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 100px;
+  }
+}
+@media screen and (max-width:600px) {
+  .container2 video {
+    width: 100%;
+ 
+  }
+  .container2 {
+    
+    height: 70vh;
+    width: 100%;
+  }
+  .logoimg {
+    width: 1000%;
+  }
+}
