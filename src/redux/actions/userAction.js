@@ -6,7 +6,7 @@ export const login= (email,password) => {
          try {
             dispatch({type:"loginRequest"})
             console.log(email,password)
-        const {data}=await axios.post("http://localhost:4000/login",{email,password},
+        const {data}=await axios.post(`${server}/login`,{email,password},
         {
             headers:{
                 "Content-type" : "application/json"
@@ -29,7 +29,7 @@ export const registeruser= (formdata) => {
          try {
             dispatch({type:"registerRequest"})
         
-        const {data}=await axios.post("http://localhost:4000/register",formdata,
+        const {data}=await axios.post(`${server}/register`,formdata,
         {
             headers:{
                 "Content-type" : "multipart/form-data"
@@ -52,7 +52,7 @@ export const getmyprofile= () => {
          try {
             dispatch({type:"loaduserRequest"})
             // console.log(email,password)
-        const {data}=await axios.get("http://localhost:4000/me",
+        const {data}=await axios.get(`${server}/me`,
         {
           withCredentials:true
         }
@@ -72,7 +72,7 @@ export const loogut= () => {
          try {
             dispatch({type:"logoutRequest"})
             // console.log(email,password)
-        const {data}=await axios.get("http://localhost:4000/logout",
+        const {data}=await axios.get(`${server}/logout`,
         {
           withCredentials:true
         }
