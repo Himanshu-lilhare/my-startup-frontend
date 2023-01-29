@@ -5,7 +5,7 @@ import { profilereducer } from "./reducers/profilereducer";
 import { subscriberReducer } from "./reducers/subscribeReducer.js";
 import { userreducer } from "./reducers/userReducer";
 
-export const server= "http://localhost:4000"
+export const server= "https://my-course-backend-third.vercel.app/"
 
 export const reduxstore=configureStore({
     reducer:{
