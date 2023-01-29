@@ -1,10 +1,10 @@
 import axios from "axios"
-
+import { server } from "../reduxstore"
 export const 
 updateprofileAction=(email,name) => async dispatch =>{
 try {
 dispatch({type:"updateProfileRequest"})
-const {data}=await axios.put("http://localhost:4000/updateprofile"
+const {data}=await axios.put(`${server}/updateprofile`
 ,{email,name}, {
     headers:{
         "Content-type" : "application/json"
@@ -22,7 +22,7 @@ dispatch({type:"updateProfileSuccess",payload:data.succes})
 export const updateProfilePictureAction= (formdata) => async dispatch =>{
     try {
     dispatch({type:"updateProfilePictureRequest"})
-    const {data}=await axios.put("http://localhost:4000/changeavatar"
+    const {data}=await axios.put(`${server}/changeavatar`
     ,formdata, {
         headers:{
             "Content-type" : "multipart/form-data"
@@ -41,7 +41,7 @@ export const
 changePasswordAction=(oldpassword,newpassword) => async dispatch =>{
 try {
 dispatch({type:"changePasswordRequest"})
-const {data}=await axios.put("http://localhost:4000/changepassword"
+const {data}=await axios.put(`${server}/changepassword`
 ,{oldpassword,newpassword}, {
     headers:{
         "Content-type" : "application/json"
@@ -60,7 +60,7 @@ export const
 forgetpassword=(email) => async dispatch =>{
 try {
 dispatch({type:"forgetPasswordRequest"})
-const {data}=await axios.post("http://localhost:4000/forgetpassword"
+const {data}=await axios.post(`${server}/forgetpassword`
 ,{email}, {
     headers:{
         "Content-type" : "application/json"
@@ -80,7 +80,7 @@ export const
 resetPasswordAction=(token,password) => async dispatch =>{
 try {
 dispatch({type:"resetPasswordRequest"})
-const {data}=await axios.put("http://localhost:4000/resetpassword/"+token
+const {data}=await axios.put(`${server}/resetpassword/${token}`
 ,{password}, {
     headers:{
         "Content-type" : "application/json"
@@ -102,7 +102,7 @@ export const
 removeFromPlaylist=(id)=> async dispatch =>{
 try {
 dispatch({type:"deletefromplaylistRequest"})
-const {data}=await axios.delete("http://localhost:4000/removefromplaylist?id="+id, {
+const {data}=await axios.delete(`${server}/removefromplaylist?id=${id}`, {
     headers:{
         "Content-type" : "application/json"
     },
