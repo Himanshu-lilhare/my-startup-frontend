@@ -5,11 +5,8 @@ import {
   HStack,
   Image,
   Input,
-  Link,
-  pseudoSelectors,
   Stack,
   Text,
-  tokenToCSSVar,
   VStack,
 } from '@chakra-ui/react';
 import React from 'react';
@@ -154,8 +151,9 @@ dispatch({type:"clearerror"})
       >
                {
                 courses ?
-     courses.map((item)=>{
+     courses.map((item,index)=>{
       return ( <Course
+      key={index+1}
       title={item.title}
       description={item.description}
       views={item.views}

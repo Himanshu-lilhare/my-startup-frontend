@@ -64,7 +64,7 @@ borderWidth:1,
                const labels=[]
              const currentmonth=new Date().getMonth()
              console.log(currentmonth)
-            const remain=11-currentmonth
+            // const remain=11-currentmonth
 
             for( let i=currentmonth;i<months.length;i--){
                 labels.unshift(months[i])

@@ -23,6 +23,10 @@ useEffect(() => {
   toast.error(error)
   dispatch({type:"clearerror"})
  }
+ if(message){
+  toast.success(message)
+  dispatch({type:'clearmessage'})
+ }
  if(courseError){
   toast.error(courseError)
   dispatch({type:"clearerror"})
@@ -56,7 +60,7 @@ useEffect(() => {
   }
   popup()
  }
-}, [dispatch,error,user.name,user.email,key,subscriptionid,courseError])
+}, [dispatch,message,error,user.name,user.email,key,subscriptionid,courseError])
 
 
   return (

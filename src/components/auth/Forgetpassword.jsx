@@ -1,14 +1,14 @@
-import { Button, Container, Heading, Input, useDisclosure, VStack } from '@chakra-ui/react'
+import { Button, Container, Heading, Input, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { useDispatch, useSelector } from 'react-redux'
 import { forgetpassword } from '../../redux/actions/profileAction'
-import {useNavigate} from "react-router-dom"
+// import {useNavigate} from "react-router-dom"
 const Forgetpassword = () => {
     const [email,setemail]=useState()
     const dispatch=useDispatch() 
-    const navigate=useNavigate()
+    // const navigate=useNavigate()
     const {loading,error,message}=useSelector(state=>state.profilebeta)
 
 function forgethandler(e){

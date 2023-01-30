@@ -1,4 +1,4 @@
-import { Box, Button, Container, Grid, Heading, Image, Input, Select, VStack } from '@chakra-ui/react'
+import { Button, Container, Grid, Heading, Image, Input, Select, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -8,7 +8,7 @@ import { createCourses } from '../../../redux/actions/adminActions'
 import { editvalue } from '../../auth/Register'
 import Slidebar from '../Slidebar'
 import {useNavigate} from "react-router-dom"
-import { getmyprofile } from '../../../redux/actions/userAction'
+
 const Createcourse = () => {
   const [title,settitle]=useState("")
   const [description,setdescription]=useState("")
@@ -58,7 +58,7 @@ useEffect(()=>{
     toast.error(error)
     dispatch({type:"clearerror"})
   }
-},[dispatch,error,message,loading])
+},[dispatch,error,message,loading,navigate])
   return (
     <Grid minH={"100vh"} templateColumns={["1fr","5fr 1fr"]}>
 

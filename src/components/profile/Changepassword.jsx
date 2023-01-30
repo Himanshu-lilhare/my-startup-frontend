@@ -1,17 +1,16 @@
 import { Button, Container, Heading, Input, VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-
 import { useDispatch, useSelector } from 'react-redux'
 import { changePasswordAction } from '../../redux/actions/profileAction'
 import { getmyprofile } from '../../redux/actions/userAction'
-import {useNavigate} from "react-router-dom"
+// import {useNavigate} from "react-router-dom"
 import toast from 'react-hot-toast'
 
 const Changepassword = () => {
     const [newpassword,setnewpassword]=useState("")
     const [oldpassword,setoldpassword]=useState("")
  const dispatch=useDispatch()
- const navigate=useNavigate()
+//  const navigate=useNavigate()
     function changepassword(e){
 e.preventDefault()
  dispatch(changePasswordAction(oldpassword,newpassword))

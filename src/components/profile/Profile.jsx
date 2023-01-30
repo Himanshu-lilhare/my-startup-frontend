@@ -23,7 +23,7 @@ import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { RiDeleteBin7Fill } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { removeFromPlaylist, updateProfilePictureAction } from '../../redux/actions/profileAction';
 import { cancleSubscription } from '../../redux/actions/subscribeAction';
 import { getmyprofile } from '../../redux/actions/userAction';

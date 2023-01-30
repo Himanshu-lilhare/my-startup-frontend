@@ -1,7 +1,4 @@
 import axios from "axios"
-import {server} from "../reduxstore"
-
-
 export const getCourses=(category="", keyword="")=> async dispatch =>{
     try {
         dispatch({type:"getCoursesRequest"})

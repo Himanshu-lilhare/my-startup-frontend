@@ -20,16 +20,16 @@ const Footer = () => {
         color={"whiteAlpha.800"}
         fontSize="40"
       >
-        <a href="" target={'_blank'}>
+        <a href="https://www.instagram.com/rajlilhare27/" rel='noreferrer' target={'_blank'}>
           <TiSocialInstagramCircular />
         </a>
-        <a href="" target={'_blank'}>
+        <a href="https://www.instagram.com/rajlilhare27/" rel='noreferrer' target={'_blank'}>
           <TiSocialGithubCircular />
         </a>
-        <a href="" target={'_blank'}>
+        <a href="https://www.instagram.com/rajlilhare27/" rel='noreferrer' target={'_blank'}>
           <TiSocialYoutubeCircular />
         </a>
-        <a href="" target={'_blank'}>
+        <a href="https://www.instagram.com/rajlilhare27/" rel='noreferrer' target={'_blank'}>
           <TiSocialFacebookCircular />
         </a>
       </HStack>

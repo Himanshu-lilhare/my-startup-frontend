@@ -1,7 +1,5 @@
 import axios from "axios"
-import { server } from "../reduxstore"
-export const 
-updateprofileAction=(email,name) => async dispatch =>{
+export const updateprofileAction=(email,name) => async dispatch =>{
 try {
 dispatch({type:"updateProfileRequest"})
 const {data}=await axios.put(`/updateprofile`

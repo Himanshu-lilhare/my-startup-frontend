@@ -32,7 +32,7 @@ if(error){
   navigate("/forgetpassword")
   dispatch({type:"clearerror"})
  
-}},[dispatch,message,error])
+}},[dispatch,message,error,navigate])
 
   return (
     <Container py={"16"} h="90vh">

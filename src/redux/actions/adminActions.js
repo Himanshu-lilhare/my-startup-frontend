@@ -1,7 +1,4 @@
 import axios from "axios"
-import { server } from "../reduxstore"
-
-
 export const getStats=()=> async dispatch =>{
     try {
         dispatch({type:"getStatsRequest"})
