@@ -5,7 +5,7 @@ import { server } from "../reduxstore"
 export const getStats=()=> async dispatch =>{
     try {
         dispatch({type:"getStatsRequest"})
-    const {data}=await axios.get(`${server}/getstats`,{
+    const {data}=await axios.get(`/getstats`,{
         
       withCredentials:true
       
@@ -20,7 +20,7 @@ export const getStats=()=> async dispatch =>{
 export const getAllUsers=()=> async dispatch =>{
     try {
         dispatch({type:"getAllUsersRequest"})
-    const {data}=await axios.get(`${server}/users`,{
+    const {data}=await axios.get(`/users`,{
        
         withCredentials:true
       
@@ -35,7 +35,7 @@ export const getAllUsers=()=> async dispatch =>{
 export const deleteUsers=(id)=> async dispatch =>{
     try {
         dispatch({type:"deleteUsersRequest"})
-    const {data}=await axios.delete(`${server}/admin/user/${id}`,{
+    const {data}=await axios.delete(`/admin/user/${id}`,{
         headers:{
             "Content-type":"application/json"
         },
@@ -51,7 +51,7 @@ export const deleteUsers=(id)=> async dispatch =>{
 export const updateUsers=(id)=> async dispatch =>{
     try {
         dispatch({type:"updateUsersRequest"})
-    const {data}=await axios.put(`${server}/admin/user/${id}`,{},{
+    const {data}=await axios.put(`/admin/user/${id}`,{},{
        
       withCredentials:true
       
@@ -67,7 +67,7 @@ export const updateUsers=(id)=> async dispatch =>{
 export const createCourses=(formdata)=> async dispatch =>{
     try {
         dispatch({type:"createCourseRequest"})
-    const {data}=await axios.post(`${server}/createcourse`,formdata,{
+    const {data}=await axios.post(`/createcourse`,formdata,{
         headers:{
             "Content-type":"multipart/form-data"
         },
@@ -84,7 +84,7 @@ export const createCourses=(formdata)=> async dispatch =>{
 export const deleteCourses=(id)=> async dispatch =>{
     try {
         dispatch({type:"deleteCourseRequest"})
-    const {data}=await axios.delete(`${server}/course/${id}`
+    const {data}=await axios.delete(`/course/${id}`
       ,{
         withCredentials:true
       })
@@ -100,7 +100,7 @@ export const createCourseLecture=(id,formdata)=> async dispatch =>{
     try {
         dispatch({type:"createLectureRequest"})
         // console.log(id)
-    const {data}=await axios.post(`${server}/course/${id}`,formdata,{
+    const {data}=await axios.post(`/course/${id}`,formdata,{
         headers:{
             "Content-type":"multipart/form-data"
         },
@@ -119,7 +119,7 @@ export const deleteCourseLecture=(courseid,lectureid)=> async dispatch =>{
     try {
         dispatch({type:"deleteLectureRequest"})
         // console.log(id)
-    const {data}=await axios.delete(`${server}/lecture?courseid=${courseid}&lectureid=${lectureid}`,{
+    const {data}=await axios.delete(`/lecture?courseid=${courseid}&lectureid=${lectureid}`,{
        
         withCredentials:true
       

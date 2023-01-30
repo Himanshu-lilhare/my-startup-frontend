@@ -8,7 +8,7 @@ export const getSubscription=()=> async dispatch =>{
     try {
         dispatch({type:"getSubscriptionSRequest"})
         // console.log(email,password)
-    const {data}=await axios.get(`${server}/subscribe`,
+    const {data}=await axios.get(`/subscribe`,
     {
       withCredentials:true
     }
@@ -30,7 +30,7 @@ export const cancleSubscription=()=> async dispatch =>{
     try {
         dispatch({type:"cancleSubscriptionRequest"})
         // console.log(email,password)
-    const {data}=await axios.delete(`${server}/canclesubscription`,
+    const {data}=await axios.delete(`/canclesubscription`,
     {
       withCredentials:true
     }
