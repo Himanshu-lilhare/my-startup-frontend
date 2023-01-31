@@ -38,7 +38,7 @@ const Courses = () => {
   }
   useEffect(()=>{
 dispatch(getCourses(category,keyword))
-
+console.log(courses)
 if(message){
   toast.success(message)
   dispatch({type:"clearmessage"})
@@ -150,7 +150,7 @@ dispatch({type:"clearerror"})
         alignItems={['center', 'flex-start']}
       >
                {
-                courses ?
+               Array.isArray(courses) && courses ?
      courses.map((item,index)=>{
       return ( <Course
       key={index+1}

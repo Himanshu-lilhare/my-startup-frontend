@@ -55,7 +55,7 @@ export const getmyprofile = () => {
       console.log(data.avatar);
       dispatch({ type: 'loaduserSuccess', payload: data.user });
     } catch (error) {
-      console.log(error.response.data.error);
+      
       dispatch({ type: 'loaduserfail', payload: error.response.data.error });
     }
   };
