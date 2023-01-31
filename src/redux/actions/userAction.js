@@ -1,12 +1,12 @@
 import axios from 'axios';
-
+import { server } from '../reduxstore';
 export const login = (email, password) => {
   return async dispatch => {
     try {
       dispatch({ type: 'loginRequest' });
       console.log(email, password);
       const { data } = await axios.post(
-        `/login`,
+        `${server}/login`,
         { email, password },
         {
           headers: {
@@ -29,7 +29,7 @@ export const registeruser = formdata => {
     try {
       dispatch({ type: 'registerRequest' });
 
-      const { data } = await axios.post(`/register`, formdata, {
+      const { data } = await axios.post(`${server}/register`, formdata, {
         headers: {
           'Content-type': 'multipart/form-data',
         },
@@ -49,7 +49,7 @@ export const getmyprofile = () => {
     try {
       dispatch({ type: 'loaduserRequest' });
       // console.log(email,password)
-      const { data } = await axios.get(`/me`, {
+      const { data } = await axios.get(`${server}/me`, {
         withCredentials: true,
       });
       console.log(data.avatar);
@@ -66,7 +66,7 @@ export const loogut = () => {
     try {
       dispatch({ type: 'logoutRequest' });
       // console.log(email,password)
-      const { data } = await axios.get(`/logout`, {
+      const { data } = await axios.get(`${server}/logout`, {
         withCredentials: true,
       });
       console.log(data);
