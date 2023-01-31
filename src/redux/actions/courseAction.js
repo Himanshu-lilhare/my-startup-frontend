@@ -1,8 +1,9 @@
 import axios from "axios"
+import { server } from "../reduxstore"
 export const getCourses=(category="", keyword="")=> async dispatch =>{
     try {
         dispatch({type:"getCoursesRequest"})
-    const {data}=await axios.get(`/courses?category=${category}&keyword=${keyword}`)
+    const {data}=await axios.get(`${server}/courses?category=${category}&keyword=${keyword}`)
  console.log(data)
     dispatch({type:"getCoursesSuccess",payload:data})  
     } catch (error) {
@@ -14,7 +15,7 @@ export const getCourses=(category="", keyword="")=> async dispatch =>{
 export const getCoursesLectures=(id)=> async dispatch =>{
     try {
         dispatch({type:"getLecturesRequest"})
-    const {data}=await axios.get(`/course/${id}`,{
+    const {data}=await axios.get(`${server}/course/${id}`,{
         withCredentials:true
     })
  console.log(data)
@@ -32,7 +33,7 @@ export const getCoursesLectures=(id)=> async dispatch =>{
 export const addToplaylist=(id)=> async dispatch =>{
     try {
         dispatch({type:"addtocartRequest"})
-    const {data}=await axios.post(`/addtoplaylist`,{id},{
+    const {data}=await axios.post(`${server}/addtoplaylist`,{id},{
         headers:{
             "Content-type":"application/json"
         },

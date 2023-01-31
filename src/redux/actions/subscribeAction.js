@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { server } from '../reduxstore';
 export const getSubscription = () => async dispatch => {
   try {
     dispatch({ type: 'getSubscriptionSRequest' });
     // console.log(email,password)
-    const { data } = await axios.get(`/subscribe`, {
+    const { data } = await axios.get(`${server}/subscribe`, {
       withCredentials: true,
     });
     console.log(data);
@@ -21,7 +22,7 @@ export const cancleSubscription = () => async dispatch => {
   try {
     dispatch({ type: 'cancleSubscriptionRequest' });
     // console.log(email,password)
-    const { data } = await axios.delete(`/canclesubscription`, {
+    const { data } = await axios.delete(`${server}/canclesubscription`, {
       withCredentials: true,
     });
     console.log(data);

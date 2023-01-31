@@ -67,6 +67,9 @@ export const loogut = () => {
       dispatch({ type: 'logoutRequest' });
       // console.log(email,password)
       const { data } = await axios.get(`${server}/logout`, {
+        headers:{
+          "Content-type" : "application/json"
+      },
         withCredentials: true,
       });
       console.log(data);
